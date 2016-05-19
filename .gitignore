@@ -1,0 +1,10 @@
+# directory #
+bin/
+.settings/
+
+
+# file #
+.classpath
+.project
+
+/target/
