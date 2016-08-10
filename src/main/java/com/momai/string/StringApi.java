@@ -7,8 +7,7 @@ package com.momai.string;
  */
 public class StringApi {
 	public static void main(String[] args) {
-		// Strings are constant, their values cannot be changed after they are
-		// created
+		// Strings are constant, their values cannot be changed after they are created
 
 		String str1 = "abc";
 		// str1 is equivalent to str2
