@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author Lian
- * @date 2016年1月6日 下午3:16:36
- * @desc
+ * @author	Lian
+ * @date	2016年1月6日 下午3:16:36
+ * @since	1.0
  */
 public class URLTest {
 
@@ -22,20 +22,26 @@ public class URLTest {
 		try {
 			// 创建url
 			URL realurl = new URL(url + "?" + param);
+
 			// 打开连接
 			URLConnection connection = realurl.openConnection();
+
 			// 设置通用的请求属性
 			connection.setRequestProperty("accept", "*/*");
 			connection.setRequestProperty("connection", "Keep-Alive");
 			connection.setRequestProperty("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
+
 			// 建立连接
 			connection.connect();
+
 			// 获取所有响应头字段
 			Map<String, List<String>> map = connection.getHeaderFields();
+
 			// 遍历所有的响应头字段，获取到cookies等
 			for (String key : map.keySet()) {
 				System.out.println(key + "--->" + map.get(key));
 			}
+
 			// 定义 BufferedReader输入流来读取URL的响应
 			read = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"));
 			String line;// 循环读取
@@ -59,26 +65,34 @@ public class URLTest {
 	}
 
 	public static String SendGET(String url) {
+
 		String result = "";// 访问返回结果
 		BufferedReader read = null;// 读取访问结果
 
 		try {
+
 			// 创建url
 			URL realurl = new URL(url);
+
 			// 打开连接
 			URLConnection connection = realurl.openConnection();
+
 			// 设置通用的请求属性
 			connection.setRequestProperty("accept", "*/*");
 			connection.setRequestProperty("connection", "Keep-Alive");
 			connection.setRequestProperty("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
+
 			// 建立连接
 			connection.connect();
+
 			// 获取所有响应头字段
 			Map<String, List<String>> map = connection.getHeaderFields();
+
 			// 遍历所有的响应头字段，获取到cookies等
 			for (String key : map.keySet()) {
 				System.out.println(key + "--->" + map.get(key));
 			}
+
 			// 定义 BufferedReader输入流来读取URL的响应
 			read = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"));
 			String line;// 循环读取

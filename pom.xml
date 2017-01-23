@@ -5,7 +5,7 @@
 	<artifactId>DailyTest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>日常测试代码</name>
+	<name>DailyTest</name>
 	<description>平时测试需要临时用的代码</description>
 
 	<build>

@@ -15,14 +15,17 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class CityListParse {
-//	private static String conf = "D:/city.xml";
+
+	//	private static String conf = "D:/city.xml";
 	private static String conf = "D:/configuration.xml";
+
 	// Document是XML在内存中的一个镜像, 获取了Document就可以通过内存的操作来实现对XML的操作
 	private static Document doc = null;
 
 	public static void main(String[] args) {
 		// 从DocumentBuilderFactory中获取一个DocumentBuilder的实例
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+
 		try {
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			doc = db.parse(new File(conf));
@@ -38,6 +41,7 @@ public class CityListParse {
 			// 获取第一个Service节点
 			Node node = nodeList.item(0);
 			System.out.println("First Node : " + node.getNodeName());
+
 			// 通过getAttributes方法来获取一个NamedNodeMap实例, 该实例包含标签属性值
 			NamedNodeMap attrs = node.getAttributes();
 			for (int i = 0; i < attrs.getLength(); i++) {
@@ -52,6 +56,7 @@ public class CityListParse {
 					System.out.println(child.getNodeName() + " : " + child.getFirstChild().getNodeValue());
 				}
 			}
+
 		} catch (ParserConfigurationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
