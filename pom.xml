@@ -4,7 +4,8 @@
 	<groupId>com.daily</groupId>
 	<artifactId>DailyTest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+
+    <packaging>pom</packaging>
 	<name>DailyTest</name>
 	<description>平时测试需要临时用的代码</description>
 
@@ -65,5 +66,10 @@
 			<artifactId>tomcat7-websocket</artifactId>
 			<version>7.0.53</version>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20160212</version>
+        </dependency>
+    </dependencies>
 </project>
